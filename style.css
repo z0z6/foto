@@ -6,11 +6,12 @@
 }
 
 :root {
-    --bg: #d8d8d8;
+    --bg: #0a0a0a;
     --surface: #141414;
-    --text: #000000;
-    --text-dim: #000000;
+    --text: #e8e8e8;
+    --text-dim: #888888;
     --accent: #c9a96e;
+    --linktree: #43E660;
 }
 
 html {
@@ -83,6 +84,42 @@ header .subtitle {
     filter: brightness(1);
 }
 
+/* ========== BANER LINKTREE ========== */
+.linktree-banner {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--surface);
+    border-top: 1px solid #1f1f1f;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+.linktree-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    background: var(--linktree);
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(67, 230, 96, 0.2);
+}
+
+.linktree-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(67, 230, 96, 0.35);
+}
+
+.linktree-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
 /* ========== STOPKA ========== */
 footer {
     text-align: center;
@@ -90,7 +127,6 @@ footer {
     color: var(--text-dim);
     font-size: 0.8rem;
     letter-spacing: 0.05em;
-    border-top: 1px solid var(--surface);
 }
 
 /* ========== LIGHTBOX ========== */
@@ -166,10 +202,20 @@ footer {
     header {
         padding: 40px 20px 30px;
     }
+
+    .linktree-btn {
+        padding: 14px 32px;
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 480px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .linktree-btn {
+        width: 90%;
+        justify-content: center;
     }
 }
