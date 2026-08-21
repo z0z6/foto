@@ -20,10 +20,16 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg);
+    
+    /* NOWE: Animowane gradientowe tło */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh; /* NOWE: gwarantuje, że tło zawsze sięga do dołu ekranu */
 }
 
 /* ========== NAGŁÓWEK ========== */
@@ -183,6 +189,13 @@ footer {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* NOWE: Definicja animacji dla gradientu w tle */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* ========== RESPONSYWNOŚĆ ========== */
