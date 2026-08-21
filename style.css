@@ -22,7 +22,7 @@ body {
     font-family: 'Inter', sans-serif;
     
     /* NOWE: Animowane gradientowe tło */
-    background: linear-gradient(-45deg, #dcdcdc, #a9a9a9, #696969, #708090);
+    background: linear-gradient(-45deg, #dcdcdc, #f0f8ff, #f5f5f5, #d3d3d3);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     
