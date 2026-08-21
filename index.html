@@ -1,117 +1,63 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>z0z6 — Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeria — Metavers</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Vanta.js (efekt tła "fog") + jego własna, klasyczna kopia three.js — działa
+     niezależnie od modułowego three.js używanego przez resztę aplikacji poniżej,
+     więc się nie gryzą (osobna globalna przestrzeń nazw vs. import modułowy). -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.fog.min.js"></script>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
 </head>
 <body>
 
-    <header>
-        <h1>z0z6</h1>
-        <p class="subtitle">Portfolio fotograficzne</p>
-    </header>
-
-    <main class="gallery">
-        <figure class="gallery-item" onclick="openLightbox('images/1.jpg', 'Zdjęcie 1')">
-            <img src="images/1.jpg" alt="Zdjęcie 1" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/2.jpg', 'Zdjęcie 2')">
-            <img src="images/2.jpg" alt="Zdjęcie 2" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/3.jpg', 'Zdjęcie 3')">
-            <img src="images/3.jpg" alt="Zdjęcie 3" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/4.jpg', 'Zdjęcie 4')">
-            <img src="images/4.jpg" alt="Zdjęcie 4" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/5.jpg', 'Zdjęcie 5')">
-            <img src="images/5.jpg" alt="Zdjęcie 5" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/6.jpg', 'Zdjęcie 6')">
-            <img src="images/6.jpg" alt="Zdjęcie 6" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/7.jpg', 'Zdjęcie 7')">
-            <img src="images/7.jpg" alt="Zdjęcie 7" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/8.jpg', 'Zdjęcie 8')">
-            <img src="images/8.jpg" alt="Zdjęcie 8" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/9.jpg', 'Zdjęcie 9')">
-            <img src="images/9.jpg" alt="Zdjęcie 9" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/10.jpg', 'Zdjęcie 10')">
-            <img src="images/10.jpg" alt="Zdjęcie 10" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/11.jpg', 'Zdjęcie 11')">
-            <img src="images/11.jpg" alt="Zdjęcie 11" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/12.jpg', 'Zdjęcie 12')">
-            <img src="images/12.jpg" alt="Zdjęcie 12" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/13.jpg', 'Zdjęcie 13')">
-            <img src="images/13.jpg" alt="Zdjęcie 13" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/14.jpg', 'Zdjęcie 14')">
-            <img src="images/14.jpg" alt="Zdjęcie 14" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/15.jpg', 'Zdjęcie 15')">
-            <img src="images/15.jpg" alt="Zdjęcie 15" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/16.jpg', 'Zdjęcie 16')">
-            <img src="images/16.jpg" alt="Zdjęcie 16" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/17.jpg', 'Zdjęcie 17')">
-            <img src="images/17.jpg" alt="Zdjęcie 17" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/18.jpg', 'Zdjęcie 18')">
-            <img src="images/18.jpg" alt="Zdjęcie 18" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/19.jpg', 'Zdjęcie 19')">
-            <img src="images/19.jpg" alt="Zdjęcie 19" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/20.jpg', 'Zdjęcie 20')">
-            <img src="images/20.jpg" alt="Zdjęcie 20" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/21.jpg', 'Zdjęcie 21')">
-            <img src="images/21.jpg" alt="Zdjęcie 21" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/22.jpg', 'Zdjęcie 22')">
-            <img src="images/22.jpg" alt="Zdjęcie 22" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/23.jpg', 'Zdjęcie 23')">
-            <img src="images/23.jpg" alt="Zdjęcie 23" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/24.jpg', 'Zdjęcie 24')">
-            <img src="images/24.jpg" alt="Zdjęcie 24" loading="lazy">
-        </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/25.jpg', 'Zdjęcie 25')">
-            <img src="images/25.jpg" alt="Zdjęcie 25" loading="lazy">
-        </figure>
-    </main>
-
-    <section class="linktree-banner">
-        <a href="https://linktr.ee/cypher_heresy" target="_blank" rel="noopener noreferrer" class="linktree-btn">
-            <svg class="linktree-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-            </svg>
-            <span>Moje linki — Linktree</span>
-        </a>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 z0z6. Wszystkie zdjęcia są mojego autorstwa.</p>
-    </footer>
-
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="">
-        <p id="lightbox-caption"></p>
+<div id="intro">
+  <div id="vanta-bg"></div>
+  <div class="intro-panel">
+    <h1>Galeria</h1>
+    <p>Wirtualna przestrzeń wystawowa — chodź, zwiedzaj, dodawaj własne prace.</p>
+    <div class="intro-row" id="intro-buttons">
+      <button id="start-fpp" class="mode-btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span>Pierwsza osoba</span>
+      </button>
+      <button id="start-tpp" class="mode-btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><path d="M12 6.5v4.5m0 0l-3.2 3.5M12 11l3.2 2.2M9 18.5l-1.7 3.5M12 15l2.8 2 1 5"/></svg>
+        <span>Trzecia osoba</span>
+      </button>
+      <button id="start-vr" class="mode-btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="4.5"/><circle cx="8.2" cy="12" r="2"/><circle cx="15.8" cy="12" r="2"/><path d="M10.2 12h3.6"/></svg>
+        <span>VR</span>
+      </button>
     </div>
+    <p class="hint">W A S D — ruch &nbsp;|&nbsp; mysz — rozglądanie (kliknij ekran, by zablokować kursor) &nbsp;|&nbsp; SHIFT — bieg</p>
+  </div>
+</div>
 
-    <script src="script.js"></script>
+<div id="hud" class="hidden">
+  <button id="toggle-mode" class="hud-btn">🔄 Zmień widok</button>
+  <button id="exit-vr" class="hud-btn hidden" style="right:auto;left:16px;">✕ Wyjdź z VR</button>
+  <div id="crosshair"></div>
+  <div id="joystick-base" class="hidden">
+    <div id="joystick-knob"></div>
+  </div>
+  <div id="reticle-ring"><div id="reticle-fill"></div></div>
+  <div id="artwork-caption" class="hidden"></div>
+  <div id="joystick-base" class="hidden"><div id="joystick-knob"></div></div>
+</div>
+
+<script type="module" src="src/main.js"></script>
 </body>
 </html>
