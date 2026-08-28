@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Preload pierwszego wiersza miniatur dla szybszego LCP -->
+    <link rel="preload" as="image" href="thumbnails/1-400.webp" imagesrcset="thumbnails/1-400.webp 400w, thumbnails/1-800.webp 800w" imagesizes="20vw">
+    <link rel="preload" as="image" href="thumbnails/2-400.webp" imagesrcset="thumbnails/2-400.webp 400w, thumbnails/2-800.webp 800w" imagesizes="20vw">
+    <link rel="preload" as="image" href="thumbnails/3-400.webp" imagesrcset="thumbnails/3-400.webp 400w, thumbnails/3-800.webp 800w" imagesizes="20vw">
+    <link rel="preload" as="image" href="thumbnails/4-400.webp" imagesrcset="thumbnails/4-400.webp 400w, thumbnails/4-800.webp 800w" imagesizes="20vw">
+    <link rel="preload" as="image" href="thumbnails/5-400.webp" imagesrcset="thumbnails/5-400.webp 400w, thumbnails/5-800.webp 800w" imagesizes="20vw">
+<base target="_blank">
 </head>
 <body>
 
@@ -16,80 +24,155 @@
     </header>
 
     <main class="gallery">
-        <figure class="gallery-item" onclick="openLightbox('images/1.jpg', 'Zdjęcie 1')">
-            <img src="images/1.jpg" alt="Zdjęcie 1" loading="lazy">
+        <figure class="gallery-item" data-full="images/1.jpg" onclick="openLightbox('images/1.jpg', 'Zdjęcie 1')">
+            <img src="thumbnails/1-400.webp"
+                 srcset="thumbnails/1-400.webp 400w, thumbnails/1-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 1" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/2.jpg', 'Zdjęcie 2')">
-            <img src="images/2.jpg" alt="Zdjęcie 2" loading="lazy">
+        <figure class="gallery-item" data-full="images/2.jpg" onclick="openLightbox('images/2.jpg', 'Zdjęcie 2')">
+            <img src="thumbnails/2-400.webp"
+                 srcset="thumbnails/2-400.webp 400w, thumbnails/2-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 2" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/3.jpg', 'Zdjęcie 3')">
-            <img src="images/3.jpg" alt="Zdjęcie 3" loading="lazy">
+        <figure class="gallery-item" data-full="images/3.jpg" onclick="openLightbox('images/3.jpg', 'Zdjęcie 3')">
+            <img src="thumbnails/3-400.webp"
+                 srcset="thumbnails/3-400.webp 400w, thumbnails/3-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 3" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/4.jpg', 'Zdjęcie 4')">
-            <img src="images/4.jpg" alt="Zdjęcie 4" loading="lazy">
+        <figure class="gallery-item" data-full="images/4.jpg" onclick="openLightbox('images/4.jpg', 'Zdjęcie 4')">
+            <img src="thumbnails/4-400.webp"
+                 srcset="thumbnails/4-400.webp 400w, thumbnails/4-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 4" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/5.jpg', 'Zdjęcie 5')">
-            <img src="images/5.jpg" alt="Zdjęcie 5" loading="lazy">
+        <figure class="gallery-item" data-full="images/5.jpg" onclick="openLightbox('images/5.jpg', 'Zdjęcie 5')">
+            <img src="thumbnails/5-400.webp"
+                 srcset="thumbnails/5-400.webp 400w, thumbnails/5-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 5" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/6.jpg', 'Zdjęcie 6')">
-            <img src="images/6.jpg" alt="Zdjęcie 6" loading="lazy">
+        <figure class="gallery-item" data-full="images/6.jpg" onclick="openLightbox('images/6.jpg', 'Zdjęcie 6')">
+            <img src="thumbnails/6-400.webp"
+                 srcset="thumbnails/6-400.webp 400w, thumbnails/6-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 6" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/7.jpg', 'Zdjęcie 7')">
-            <img src="images/7.jpg" alt="Zdjęcie 7" loading="lazy">
+        <figure class="gallery-item" data-full="images/7.jpg" onclick="openLightbox('images/7.jpg', 'Zdjęcie 7')">
+            <img src="thumbnails/7-400.webp"
+                 srcset="thumbnails/7-400.webp 400w, thumbnails/7-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 7" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/8.jpg', 'Zdjęcie 8')">
-            <img src="images/8.jpg" alt="Zdjęcie 8" loading="lazy">
+        <figure class="gallery-item" data-full="images/8.jpg" onclick="openLightbox('images/8.jpg', 'Zdjęcie 8')">
+            <img src="thumbnails/8-400.webp"
+                 srcset="thumbnails/8-400.webp 400w, thumbnails/8-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 8" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/9.jpg', 'Zdjęcie 9')">
-            <img src="images/9.jpg" alt="Zdjęcie 9" loading="lazy">
+        <figure class="gallery-item" data-full="images/9.jpg" onclick="openLightbox('images/9.jpg', 'Zdjęcie 9')">
+            <img src="thumbnails/9-400.webp"
+                 srcset="thumbnails/9-400.webp 400w, thumbnails/9-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 9" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/10.jpg', 'Zdjęcie 10')">
-            <img src="images/10.jpg" alt="Zdjęcie 10" loading="lazy">
+        <figure class="gallery-item" data-full="images/10.jpg" onclick="openLightbox('images/10.jpg', 'Zdjęcie 10')">
+            <img src="thumbnails/10-400.webp"
+                 srcset="thumbnails/10-400.webp 400w, thumbnails/10-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 10" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/11.jpg', 'Zdjęcie 11')">
-            <img src="images/11.jpg" alt="Zdjęcie 11" loading="lazy">
+        <figure class="gallery-item" data-full="images/11.jpg" onclick="openLightbox('images/11.jpg', 'Zdjęcie 11')">
+            <img src="thumbnails/11-400.webp"
+                 srcset="thumbnails/11-400.webp 400w, thumbnails/11-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 11" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/12.jpg', 'Zdjęcie 12')">
-            <img src="images/12.jpg" alt="Zdjęcie 12" loading="lazy">
+        <figure class="gallery-item" data-full="images/12.jpg" onclick="openLightbox('images/12.jpg', 'Zdjęcie 12')">
+            <img src="thumbnails/12-400.webp"
+                 srcset="thumbnails/12-400.webp 400w, thumbnails/12-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 12" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/13.jpg', 'Zdjęcie 13')">
-            <img src="images/13.jpg" alt="Zdjęcie 13" loading="lazy">
+        <figure class="gallery-item" data-full="images/13.jpg" onclick="openLightbox('images/13.jpg', 'Zdjęcie 13')">
+            <img src="thumbnails/13-400.webp"
+                 srcset="thumbnails/13-400.webp 400w, thumbnails/13-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 13" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/14.jpg', 'Zdjęcie 14')">
-            <img src="images/14.jpg" alt="Zdjęcie 14" loading="lazy">
+        <figure class="gallery-item" data-full="images/14.jpg" onclick="openLightbox('images/14.jpg', 'Zdjęcie 14')">
+            <img src="thumbnails/14-400.webp"
+                 srcset="thumbnails/14-400.webp 400w, thumbnails/14-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 14" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/15.jpg', 'Zdjęcie 15')">
-            <img src="images/15.jpg" alt="Zdjęcie 15" loading="lazy">
+        <figure class="gallery-item" data-full="images/15.jpg" onclick="openLightbox('images/15.jpg', 'Zdjęcie 15')">
+            <img src="thumbnails/15-400.webp"
+                 srcset="thumbnails/15-400.webp 400w, thumbnails/15-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 15" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/16.jpg', 'Zdjęcie 16')">
-            <img src="images/16.jpg" alt="Zdjęcie 16" loading="lazy">
+        <figure class="gallery-item" data-full="images/16.jpg" onclick="openLightbox('images/16.jpg', 'Zdjęcie 16')">
+            <img src="thumbnails/16-400.webp"
+                 srcset="thumbnails/16-400.webp 400w, thumbnails/16-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 16" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/17.jpg', 'Zdjęcie 17')">
-            <img src="images/17.jpg" alt="Zdjęcie 17" loading="lazy">
+        <figure class="gallery-item" data-full="images/17.jpg" onclick="openLightbox('images/17.jpg', 'Zdjęcie 17')">
+            <img src="thumbnails/17-400.webp"
+                 srcset="thumbnails/17-400.webp 400w, thumbnails/17-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 17" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/18.jpg', 'Zdjęcie 18')">
-            <img src="images/18.jpg" alt="Zdjęcie 18" loading="lazy">
+        <figure class="gallery-item" data-full="images/18.jpg" onclick="openLightbox('images/18.jpg', 'Zdjęcie 18')">
+            <img src="thumbnails/18-400.webp"
+                 srcset="thumbnails/18-400.webp 400w, thumbnails/18-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 18" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/19.jpg', 'Zdjęcie 19')">
-            <img src="images/19.jpg" alt="Zdjęcie 19" loading="lazy">
+        <figure class="gallery-item" data-full="images/19.jpg" onclick="openLightbox('images/19.jpg', 'Zdjęcie 19')">
+            <img src="thumbnails/19-400.webp"
+                 srcset="thumbnails/19-400.webp 400w, thumbnails/19-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 19" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/20.jpg', 'Zdjęcie 20')">
-            <img src="images/20.jpg" alt="Zdjęcie 20" loading="lazy">
+        <figure class="gallery-item" data-full="images/20.jpg" onclick="openLightbox('images/20.jpg', 'Zdjęcie 20')">
+            <img src="thumbnails/20-400.webp"
+                 srcset="thumbnails/20-400.webp 400w, thumbnails/20-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 20" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/21.jpg', 'Zdjęcie 21')">
-            <img src="images/21.jpg" alt="Zdjęcie 21" loading="lazy">
+        <figure class="gallery-item" data-full="images/21.jpg" onclick="openLightbox('images/21.jpg', 'Zdjęcie 21')">
+            <img src="thumbnails/21-400.webp"
+                 srcset="thumbnails/21-400.webp 400w, thumbnails/21-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 21" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/22.jpg', 'Zdjęcie 22')">
-            <img src="images/22.jpg" alt="Zdjęcie 22" loading="lazy">
+        <figure class="gallery-item" data-full="images/22.jpg" onclick="openLightbox('images/22.jpg', 'Zdjęcie 22')">
+            <img src="thumbnails/22-400.webp"
+                 srcset="thumbnails/22-400.webp 400w, thumbnails/22-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 22" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/23.jpg', 'Zdjęcie 23')">
-            <img src="images/23.jpg" alt="Zdjęcie 23" loading="lazy">
+        <figure class="gallery-item" data-full="images/23.jpg" onclick="openLightbox('images/23.jpg', 'Zdjęcie 23')">
+            <img src="thumbnails/23-400.webp"
+                 srcset="thumbnails/23-400.webp 400w, thumbnails/23-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 23" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/24.jpg', 'Zdjęcie 24')">
-            <img src="images/24.jpg" alt="Zdjęcie 24" loading="lazy">
+        <figure class="gallery-item" data-full="images/24.jpg" onclick="openLightbox('images/24.jpg', 'Zdjęcie 24')">
+            <img src="thumbnails/24-400.webp"
+                 srcset="thumbnails/24-400.webp 400w, thumbnails/24-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 24" loading="lazy" width="400" height="400" decoding="async">
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('images/25.jpg', 'Zdjęcie 25')">
-            <img src="images/25.jpg" alt="Zdjęcie 25" loading="lazy">
+        <figure class="gallery-item" data-full="images/25.jpg" onclick="openLightbox('images/25.jpg', 'Zdjęcie 25')">
+            <img src="thumbnails/25-400.webp"
+                 srcset="thumbnails/25-400.webp 400w, thumbnails/25-800.webp 800w"
+                 sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 20vw"
+                 alt="Zdjęcie 25" loading="lazy" width="400" height="400" decoding="async">
         </figure>
     </main>
 
