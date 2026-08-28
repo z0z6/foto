@@ -18,8 +18,11 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeLightbox();
 });
 
+// Preload oryginałów po najechaniu myszką na miniaturę
 document.addEventListener('DOMContentLoaded', function() {
     const items = document.querySelectorAll('.gallery-item');
+
+    // IntersectionObserver dla animacji fade-in
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -34,5 +37,20 @@ document.addEventListener('DOMContentLoaded', function() {
         item.style.transform = 'translateY(20px)';
         item.style.transition = `opacity 0.6s ease ${index * 0.03}s, transform 0.6s ease ${index * 0.03}s`;
         observer.observe(item);
+
+        // Prefetch oryginału na hover (tylko raz)
+        const fullSrc = item.getAttribute('data-full');
+        if (fullSrc) {
+            let prefetched = false;
+            item.addEventListener('mouseenter', () => {
+                if (!prefetched) {
+                    const link = document.createElement('link');
+                    link.rel = 'prefetch';
+                    link.href = fullSrc;
+                    document.head.appendChild(link);
+                    prefetched = true;
+                }
+            }, { once: true });
+        }
     });
 });
