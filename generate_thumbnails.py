@@ -101,7 +101,7 @@ def main():
     print("\nNastępne kroki:")
     print("  1. Sprawdź czy miniatury wyglądają poprawnie")
     print("  2. Zaktualizuj index.html (użyj nowego pliku)")
-    print("  3. git add thumbnails/ && git commit -m "Add optimized thumbnails"")
+    print('  3. git add thumbnails/ && git commit -m "Add optimized thumbnails"')
     print("  4. git push")
 
 if __name__ == "__main__":
