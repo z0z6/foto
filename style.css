@@ -29,9 +29,9 @@ body {
     background: linear-gradient(
         135deg,
         #dddbE0 12.5%,
-        #dcdddd 37.5%,
-        #fbfaf5 62.5%,
-        #cdd3d9 87.5%
+        #afafb0 37.5%,
+        #dcdddd 62.5%,
+        #707070 87.5%
     ); /* fallback */
 
     background: linear-gradient(
