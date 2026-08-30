@@ -20,16 +20,30 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    
-    /* NOWE: Animowane gradientowe tło */
-    background: linear-gradient(-45deg, #dcdcdc, #f0f8ff, #f5f5f5, #d3d3d3);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    min-height: 100vh; /* NOWE: gwarantuje, że tło zawsze sięga do dołu ekranu */
+    min-height: 100vh;
+
+    /* Untitled blend z feralui – ruchome tło */
+    background: linear-gradient(
+        135deg,
+        #dddbE0 12.5%,
+        #dcdddd 37.5%,
+        #fbfaf5 62.5%,
+        #cdd3d9 87.5%
+    ); /* fallback */
+
+    background: linear-gradient(
+        135deg in oklab,
+        oklch(89.4% 0.0071 304.2) 12.5%,
+        oklch(89.7% 0.0011 197.1) 37.5%,
+        oklch(98.4% 0.0067 97.3) 62.5%,
+        oklch(86.4% 0.0106 247.9) 87.5%
+    );
+
+    background-size: 400% 400%;
+    animation: gradientBG 18s ease infinite;
 }
 
 /* ========== NAGŁÓWEK ========== */
