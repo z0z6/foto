@@ -24,26 +24,45 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
+    position: relative;
+    background-color: #e4e4e6;
+    overflow-x: hidden;
+}
 
-    /* Untitled blend z feralui – ruchome tło */
-    background: linear-gradient(
-        135deg,
-        #dddbE0 12.5%,
-        #afafb0 37.5%,
-        #dcdddd 62.5%,
-        #707070 87.5%
-    ); /* fallback */
+/* ruchome tło – Untitled blend (FeralUI) */
+body::before {
+    content: '';
+    position: fixed;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    z-index: -1;
+    pointer-events: none;
 
     background: linear-gradient(
-        135deg in oklab,
-        oklch(89.4% 0.0071 304.2) 12.5%,
-        oklch(89.7% 0.0011 197.1) 37.5%,
-        oklch(98.4% 0.0067 97.3) 62.5%,
-        oklch(86.4% 0.0106 247.9) 87.5%
+        125deg,
+        #cdd3d9 0%,
+        #dddbE0 18%,
+        #fbfaf5 36%,
+        #dcdddd 54%,
+        #cdd3d9 72%,
+        #dddbE0 86%,
+        #fbfaf5 100%
     );
 
-    background-size: 400% 400%;
-    animation: gradientBG 18s ease infinite;
+    background: linear-gradient(
+        125deg in oklab,
+        oklch(86.4% 0.0106 247.9) 0%,
+        oklch(89.4% 0.0071 304.2) 18%,
+        oklch(98.4% 0.0067 97.3) 36%,
+        oklch(89.7% 0.0011 197.1) 54%,
+        oklch(86.4% 0.0106 247.9) 72%,
+        oklch(89.4% 0.0071 304.2) 86%,
+        oklch(98.4% 0.0067 97.3) 100%
+    );
+
+    animation: gradientMove 14s ease-in-out infinite;
 }
 
 /* ========== NAGŁÓWEK ========== */
@@ -94,7 +113,7 @@ header .subtitle {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
                 filter 0.5s ease;
     filter: brightness(0.95);
 }
@@ -174,7 +193,7 @@ footer {
     max-width: 90vw;
     max-height: 85vh;
     object-fit: contain;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .lightbox-close {
@@ -205,11 +224,25 @@ footer {
     to { opacity: 1; }
 }
 
-/* NOWE: Definicja animacji dla gradientu w tle */
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@keyframes gradientMove {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(-12%, -8%) rotate(3deg);
+    }
+    66% {
+        transform: translate(-6%, -14%) rotate(-2deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+    }
 }
 
 /* ========== RESPONSYWNOŚĆ ========== */
